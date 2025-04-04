@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Medidores - Canvas Gauges</title>
+
+    <!-- Biblioteca Canvas Gauges -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-gauges@2.1.7"></script>
+    
+    <!-- Fonte Orbitron para o Medidor Digital -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <!-- Importação da Fonte Seven Segment (Local) -->
+    <style>
+        @font-face {
+            font-family: 'SevenSegment';
+            src: url('fonts/SevenSegment.ttf') format('truetype');
+        }
+
+        /* Estilizando o Medidor Digital (Orbitron) */
+        #digitalGauge {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: rgb(47, 243, 8);
+            background: black;
+            width: 250px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+        }
+
+        /* Estilizando o Display de 7 Segmentos */
+        .seven-segment {
+            font-family: 'SevenSegment', sans-serif;
+            font-size: 80px;
+            font-weight: bold;
+            /*color: rgb(253, 156, 0);*/
+            color: rgb(248, 212, 31);
+            background-color: rgb(11, 7, 66);
+            width: 130px;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+            display: block;
+            margin: 20px auto;
+        }
+        body{
+            background-color: rgb(123, 153, 253);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Medidor Circular (Radial Gauge)</h2>
+    <canvas id="radialGauge"></canvas>
+
+    <h2>Medidor Linear</h2>
+    <canvas id="linearGauge"></canvas>
+
+    <h2>Medidor Digital</h2>
+    <div id="digitalGauge">-- °C</div>
+
+    <h2>Medidor Digital (7 Segmentos)</h2>
+    <div id="digitalGauge2" class="seven-segment">000</div>
+
+    <h2>Medidor com &lt;meter&gt;</h2>
+    <meter id="meterGauge" min="0" max="100" value="50"></meter>
+
+    <script src="script.js"></script>
+</body>
+</html>
